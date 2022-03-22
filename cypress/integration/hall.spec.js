@@ -28,8 +28,10 @@ describe("Hall creating", () => {
   });
   it("Should close sales", () => {
     cy.closeSales(testData.salesHall);
-  });
-  it("Should delete hall", () => {
-    cy.deleteHall(testData.hallName1);
-  });
+  });    
+});
+
+after(() => {
+  cy.visit("/");
+  cy.deleteHall(testData.hallName1);  
 });
